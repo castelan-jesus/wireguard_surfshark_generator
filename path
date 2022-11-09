@@ -1,4 +1,9 @@
 #.conf files will be downloaded and processed here. Feel free to change it:
 #If directory doesn't exists, it will be automatically created.
 
+#Examples:
+
+#DIR="$HOME/Downloads/WG_Surfshark/conf_files"
+#DIR="$HOME/Documents/WG_Surfshark/conf_files"
+
 DIR="$HOME/WG_Surfshark/conf_files"
