@@ -9,7 +9,7 @@ fi
 
 
 	if [ "$(ls -A "$DIR")" ]; then
-     echo "$DIR is populated with the next files:"
+     echo "$DIR is populated with the following files:"
      ls $DIR
 	else
     echo "$DIR is empty. Your .conf files will be downloaded here or if you already have your .conf files, you can place them here to change your private key."
