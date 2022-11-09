@@ -1,4 +1,4 @@
-DIR="$HOME/WG_Surfshark/conf_files"
+source $PWD/path
 
 if [ -d "$DIR" ]; then
   echo "$DIR exists"

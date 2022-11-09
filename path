@@ -1,0 +1,4 @@
+#.conf files will be downloaded and processed here. Feel free to change it:
+#If directory doesn't exists, it will be automatically created.
+
+DIR="$HOME/WG_Surfshark/conf_files"
