@@ -28,14 +28,21 @@ rename_files(){
 
 for i in *; do
 
-  final_name=$(find "$i"| grep -h -o -P '.{0,7}prod.{0,10}')
+  final_name=$(find "$i"| grep -h -o -P '.{0,7}prod.{0,0}')
     mv $i $final_name.conf
     done
 }
 
+compress_conf_files(){
+cd $DIR
+tar -cvf conf_files.tar -C $PWD *.conf
+tar -czf conf_files.tar.gz -C $PWD *.conf
+zip conf_files.zip *.conf
+}
+
 echo "Select an option"
 
-select option in generate_wg_config_files update_config_files; do
+select option in generate_wg_config_files update_config_files compress_conf_files_tar_zip; do
 
 
     case $option in
@@ -43,11 +50,17 @@ select option in generate_wg_config_files update_config_files; do
         download_conf_files
         insert_private_key
         rename_files
+        compress_conf_files
         ;;
 
     "update_config_files")
         insert_private_key
         ;;
+
+        "compress_conf_files_tar_zip")
+        compress_conf_files
+        ;;
+
 
     esac
 done
