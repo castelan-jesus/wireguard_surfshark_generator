@@ -18,14 +18,7 @@ insert_private_key() {
   cd $DIR
   for i in *; do
 
-  sed -i '/PrivateKey/d' $i
-
-  ex $i <<eof
-6 insert
-PrivateKey = $pk
-.
-xit
-eof
+sed -i "s|PrivateKey =.*|PrivateKey = $pk|g" $i
 
 done
 }
